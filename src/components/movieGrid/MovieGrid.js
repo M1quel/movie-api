@@ -9,7 +9,7 @@ export default function Moviegrid(props) {
 
             {props.movies?.length > 0 ? props.movies?.map(movie => {
                 return <Movieitem movie={movie} key={movie.imdbID}/>
-            }) : props.mode === "search" ? <Spinner/> : <p>Søg for at finde resultater</p>}
+            }) : props.mode === "search" ? <Spinner/> : <p className="noResults">Søg for at finde resultater</p>}
         </main>
     )
 }

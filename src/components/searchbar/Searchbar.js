@@ -1,6 +1,6 @@
 import { navigate } from '@reach/router';
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./Searchbar.scss"
 
 export default function Searchbar(state) {
@@ -27,7 +27,11 @@ export default function Searchbar(state) {
         }).catch(function (error) {
             console.error(error);
         });
+
     }
+    useEffect(function () {
+        document.querySelector(".searchCheck").checked = true;
+    }, [])
     return (
         <section className="header">
             <input type="checkbox" name="searchCheck" id="searchCheck" className="searchCheck" />
