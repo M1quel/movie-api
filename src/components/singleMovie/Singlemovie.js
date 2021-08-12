@@ -42,7 +42,7 @@ export default function Singlemovie(props) {
                 </div>
             </div>
             <section className="movieMain">
-                <p className="movieMain__description">{movie.Plot}</p>
+                {movie.Plot === "N/A" ? null : <p className="movieMain__description">{movie.Plot}</p>}
                 <div className="ratings">
                     <p className="ratings__metascore rating"><span className="score">{movie.Metascore === "N/A" ? "No metascore" : movie.Metascore}</span></p>
                     <p className="ratings__imdbRating rating"><span className="score">{movie.imdbRating === "N/A" ? "No imdbRating" : movie.imdbRating}</span></p>
