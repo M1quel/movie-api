@@ -1,0 +1,36 @@
+.movieItem {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.548);
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+
+    img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    &__contentWrapper {
+        flex: 1;
+    }
+
+    &__title {
+        font-size: 30px;
+        color: rgb(221, 221, 221);
+        font-family: 'Bubblegum Sans', cursive;
+        margin-bottom: 5px;
+    }
+    &__year {
+        font-size: 20px;
+        color: rgb(150, 150, 150);
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
+    }
+    &__link {
+        font-size: 20px;
+        padding: 5px 10px;
+        background-color: rgb(131, 131, 131);
+    }
+}

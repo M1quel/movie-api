@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Router } from '@reach/router';
+import { useState } from 'react';
+import './App.scss';
+import Moviegrid from './components/movieGrid/MovieGrid';
+import Searchbar from "./components/searchbar/Searchbar";
+import Singlemovie from './components/singleMovie/Singlemovie';
 
 function App() {
+
+  var [movies, setMovies] = useState([])
+
+  // useEffect(function() {
+  //   if(movies.length > 0) {
+  //   }
+  // }, [movies])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Searchbar state={setMovies}/>
+      <Router>
+        <Moviegrid default path="/" movies={movies}/>
+        <Moviegrid path="/:mode" movies={movies}/>
+
+        <Singlemovie path="/singleMovie/:id"/>
+      </Router>
+    </>
   );
 }
 

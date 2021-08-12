@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: rgb(51, 51, 51);
+  padding-top: 10vh;
+  overflow-x: hidden;
+}
+
+$desktop: 900px;
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}

@@ -1,0 +1,34 @@
+.spinnerWrapper {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .spinner {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        animation: spinner infinite .5s linear;
+
+        &Dot {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: white;
+        }
+    }
+}
+
+
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+  
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
