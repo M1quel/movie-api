@@ -46,6 +46,7 @@
         display: none;
     }
     &__expandSearch {
+        cursor: pointer;
         transition: .2s;
         visibility: visible;
         opacity: 1;

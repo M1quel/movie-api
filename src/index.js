@@ -8,3 +8,16 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+if("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker.register("/sw.js").then(
+      function(registration) {
+        console.log("SW registered succesfully");
+      }, 
+      function(err) {
+        console.log("Something went wrong:", err)
+      }
+    )
+  })
+}
