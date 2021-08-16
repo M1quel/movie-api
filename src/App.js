@@ -8,10 +8,10 @@ import Singlemovie from './components/singleMovie/Singlemovie';
 function App() {
   var [movies, setMovies] = useState([])
 
-  function displayNotification (message) {
+  function displayNotification () {
     if(Notification.permission === "granted") {
       navigator.serviceWorker.getRegistration().then(function (reg) {
-        reg.showNotification(message)
+        reg.showNotification("hej")
       })
     }
   }
@@ -21,7 +21,7 @@ function App() {
   })
   return (
     <>
-      <button onClick={() => displayNotification("Du grim")}>Notification</button>
+      <button onClick={displayNotification}>Notification</button>
       <Searchbar state={setMovies}/>
       <Router>
         <Moviegrid default path="/" movies={movies}/>
