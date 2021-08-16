@@ -3,12 +3,18 @@ import { useState } from 'react';
 import './App.scss';
 import Moviegrid from './components/movieGrid/MovieGrid';
 import Searchbar from "./components/searchbar/Searchbar";
-import displayNotification from './components/helpers/displayNotification';
 import Singlemovie from './components/singleMovie/Singlemovie';
 
 function App() {
   var [movies, setMovies] = useState([])
 
+  function displayNotification (message) {
+    if(Notification.permission === "granted") {
+      navigator.serviceWorker.getRegistration().then(function (reg) {
+        reg.showNotification(message)
+      })
+    }
+  }
 
   Notification.requestPermission(function(status) {
     console.log("Notification permission status: ", status)
