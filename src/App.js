@@ -1,5 +1,5 @@
 import { Router } from '@reach/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss';
 import Moviegrid from './components/movieGrid/MovieGrid';
 import Searchbar from "./components/searchbar/Searchbar";
@@ -7,9 +7,11 @@ import displayNotification from './components/helpers/displayNotification';
 import Singlemovie from './components/singleMovie/Singlemovie';
 
 function App() {
-  Notification.requestPermission(function(status) {
-    console.log("Notification permission status: ", status)
-  })
+  useEffect(function () {
+    Notification.requestPermission(function(status) {
+      console.log("Notification permission status: ", status)
+    })
+  }, [])
   var [movies, setMovies] = useState([])
 
   return (
