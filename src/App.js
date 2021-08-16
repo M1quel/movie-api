@@ -9,6 +9,7 @@ function App() {
   var [movies, setMovies] = useState([])
 
   function displayNotification () {
+    console.log("den kommer hertil")
     if(Notification.permission === "granted") {
       navigator.serviceWorker.getRegistration().then(function (reg) {
         reg.showNotification("hej")
