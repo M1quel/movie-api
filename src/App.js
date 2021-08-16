@@ -7,11 +7,11 @@ import displayNotification from './components/helpers/displayNotification';
 import Singlemovie from './components/singleMovie/Singlemovie';
 
 function App() {
-  var [movies, setMovies] = useState([])
-
   Notification.requestPermission(function(status) {
     console.log("Notification permission status: ", status)
   })
+  var [movies, setMovies] = useState([])
+
   return (
     <>
       <button onClick={() => displayNotification("Du grim")}>Notification</button>
