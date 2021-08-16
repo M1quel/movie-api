@@ -11,14 +11,14 @@ function App() {
   Notification.requestPermission(function(status) {
     console.log("Notification permission status: ", status)
   })
-  function displayNotification () {
-    console.log("den kommer hertil")
-    if(Notification.permission === "granted") {
-      navigator.serviceWorker.getRegistration().then(function (reg) {
-        reg.showNotification("hej")
-      })
-    }
-  }
+  // function displayNotification () {
+  //   console.log("den kommer hertil")
+  //   if(Notification.permission === "granted") {
+  //     navigator.serviceWorker.getRegistration().then(function (reg) {
+  //       reg.showNotification("hej")
+  //     })
+  //   }
+  // }
 
   return (
     <>
