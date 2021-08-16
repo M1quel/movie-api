@@ -3,18 +3,19 @@ import { useState } from 'react';
 import './App.scss';
 import Moviegrid from './components/movieGrid/MovieGrid';
 import Searchbar from "./components/searchbar/Searchbar";
+import displayNotification from './components/helpers/displayNotification';
 import Singlemovie from './components/singleMovie/Singlemovie';
 
 function App() {
-
   var [movies, setMovies] = useState([])
 
-  // useEffect(function() {
-  //   if(movies.length > 0) {
-  //   }
-  // }, [movies])
+
+  Notification.requestPermission(function(status) {
+    console.log("Notification permission status: ", status)
+  })
   return (
     <>
+      <button onClick={() => displayNotification("Du grim")}>Notification</button>
       <Searchbar state={setMovies}/>
       <Router>
         <Moviegrid default path="/" movies={movies}/>
