@@ -17,6 +17,10 @@
         max-width: 1200px;
         grid-template-areas: "poster header" "poster content";
     }
+
+    &__content {
+        align-self: flex-start;
+    }
     p {
         font-family: 'Montserrat', sans-serif;
 
@@ -97,9 +101,7 @@
         max-width: 500px;
         margin-bottom: 20px;
         @include desktop {
-            grid-area: content;
-            align-self: flex-start;
-            margin-bottom: 0;
+            margin-bottom: 10px;
         }
 
         &__description {
@@ -130,6 +132,33 @@
                 .score {
                     color: rgb(255, 187, 0);
                 }
+            }
+        }  
+    }
+
+    .rating {
+        max-width: 500px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &__heading {
+            font-size: clamp(30px, 5vw, 45px);
+            
+        }
+        &__wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            svg {
+                height: 40px;
+                stroke: yellow;
+                stroke-width: 20px;
+                font-size: 30px;
+                path {
+                    fill: transparent;
+                }
+
             }
         }
     }
