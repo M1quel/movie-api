@@ -13,7 +13,7 @@
         max-width: 1200px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: auto auto;
         max-width: 1200px;
         grid-template-areas: "poster header" "poster content";
     }
@@ -98,6 +98,8 @@
     }
 
     .movieMain {
+        display: flex;
+        flex-direction: column;
         max-width: 500px;
         margin-bottom: 20px;
         @include desktop {
@@ -111,6 +113,7 @@
             font-size: clamp(15px, 2vw, 20px);
         }
         .ratings {
+            align-items: flex-start;
             width: 100%;
             display: flex;
             justify-content: space-evenly;
@@ -136,13 +139,16 @@
         }  
     }
 
-    .rating {
+    .userRating {
+        margin-bottom: 50px;
         max-width: 500px;
         display: flex;
         align-items: center;
         flex-direction: column;
-        &__heading {
+        .rating__heading {
             font-size: clamp(30px, 5vw, 45px);
+            font-family: 'Bubblegum Sans', cursive;
+            color: white;
             
         }
         &__wrapper {
@@ -155,13 +161,81 @@
                 stroke: yellow;
                 stroke-width: 20px;
                 font-size: 30px;
-                path {
-                    fill: transparent;
-                }
 
             }
         }
     }
+
+    .userRatingWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .userRating {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            .userDescription__p {
+                max-width: 80%;
+                text-align: center;
+                margin-bottom: 10px;
+                font-style: italic;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+            }
+        }
+
+        .userRatingBTN {
+            background-color: #585858;
+            box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.603);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            
+        }
+
+
+        .userRatingForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+
+            select {
+                font-family: 'Montserrat', sans-serif;
+                height: unset;
+                width: fit-content;
+                color: white;
+                border-radius: 4px;
+                background-color: #4e4e4e;
+                padding: 5px 10px;
+                @include desktop {
+                    height: 40px;
+                }
+            }
+            textarea {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 15px;
+                background-color: #4e4e4e;
+                color: white;
+                font-weight: 500;
+                padding: 5px 10px;
+                height: 70px;
+                width: 80%;
+                resize: none;
+                border-radius: 5px;
+                &::placeholder {
+                    color: rgb(165, 165, 165);
+                }
+            }
+        }
+    }
+
     
     p {
         color: rgb(150, 150, 150);
