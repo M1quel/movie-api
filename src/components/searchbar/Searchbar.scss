@@ -66,6 +66,9 @@
     }
     .searchCheck:checked ~ .search {
         height: 10vh;
+        @include desktop {
+            height: 6vh;
+        }
     }
 
     .searchCheck:checked ~ .header__expandSearch {
