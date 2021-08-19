@@ -1,4 +1,4 @@
-const CACHE_NAME = "movieDB_CACHE_V2";
+const CACHE_NAME = "movieDB_CACHE_V3";
 var urlsToCache = [
     "/"
 ];
