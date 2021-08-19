@@ -27,6 +27,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "prev pageNum next";
     &__btn {
+        cursor: pointer;
         font-family: 'Montserrat', sans-serif;
         padding: 5px 10px;
         background-color: rgb(80, 80, 80);
@@ -35,6 +36,7 @@
         box-shadow: 0 0 20px 1px rgb(14, 14, 14);
 
         &--inactive {
+            cursor: auto;
             box-shadow: none;
             color: darken(white, 50%);
             background-color: darken(rgb(80, 80, 80), 20%);
