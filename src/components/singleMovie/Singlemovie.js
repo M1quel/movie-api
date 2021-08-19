@@ -7,7 +7,6 @@ export default function Singlemovie(props) {
 
     var [movie, setMovie] = useState(undefined) 
     var [userRating, setUserRating] = useState(undefined)
-    
     let db = new Localbase("db");
     useEffect (function () {
         db.collection("ratings").doc({ id: props.id }).get().then(document => {

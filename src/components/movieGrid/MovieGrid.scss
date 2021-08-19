@@ -8,11 +8,50 @@
     gap: 20px;
 
     .noResults {
+        font-family: 'Montserrat', sans-serif;
         margin-top: 100px;
         padding: 5px 10px;
         border-radius: 5px;
         background-color: rgba(0, 0, 0, 0.192);
         color: rgb(175, 175, 175);
         font-size: 30px;
+    }
+}
+.pagination {
+    margin: 20px auto;
+    margin-bottom: 30px;
+    width: fit-content;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "prev pageNum next";
+    &__btn {
+        font-family: 'Montserrat', sans-serif;
+        padding: 5px 10px;
+        background-color: rgb(80, 80, 80);
+        border-radius: 5px;
+        color: white;
+        box-shadow: 0 0 20px 1px rgb(14, 14, 14);
+
+        &--inactive {
+            box-shadow: none;
+            color: darken(white, 50%);
+            background-color: darken(rgb(80, 80, 80), 20%);
+        }
+    }
+    &__prev {
+        grid-area: prev;
+
+    }
+
+    &__pageNum {
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        grid-area: pageNum;
+    }
+
+    &__next {
+        grid-area: next;
     }
 }

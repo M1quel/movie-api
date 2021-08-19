@@ -1,4 +1,4 @@
-@import "../../App.scss";
+@import "../../mixins.scss";
 .singleMovie {
     display: grid;
     grid-template-columns: 1fr;
@@ -148,7 +148,7 @@
         .rating__heading {
             font-size: clamp(30px, 5vw, 45px);
             font-family: 'Bubblegum Sans', cursive;
-            color: white;
+            color: darken(rgb(221, 221, 221), 15%);
             
         }
         .rating__wrapper {

@@ -1,33 +1,30 @@
 import { navigate } from '@reach/router';
-import axios from 'axios';
 import React, { useEffect } from 'react';
 import "./Searchbar.scss"
+import fetchMovies from '../helpers/fetch';
 
-export default function Searchbar(state) {
+export default function Searchbar(props) {
     function submitHandler (event) {
         event.preventDefault()
-        state.state([])
+        props.state([])
         navigate("/search")
         var searchValue = document.querySelector(".search__input").value
-
+        props.searchState(searchValue)
         var options = {
             method: 'GET',
             url: 'https://movie-database-imdb-alternative.p.rapidapi.com/',
-            params: {s: searchValue, page: '1', r: 'json'},
+            params: {s: searchValue, page: 1, r: 'json'},
             headers: {
               'x-rapidapi-key': 'cbf0eada93mshda4348a7166d51bp13e11bjsna5929dc3ff1a',
               'x-rapidapi-host': 'movie-database-imdb-alternative.p.rapidapi.com'
             }
         };
-        axios.request(options).then(function (response) {
-            state.state(response.data.Search)
-            document.querySelector(".searchCheck").checked = false;
+        fetchMovies(options).then((data) => {
+            props.state(data.Search)
+            props.totalMovies(data.totalResults)
+            props.pageState.setPage(1)
             navigate("/")
-
-        }).catch(function (error) {
-            console.error(error);
-        });
-
+        })
     }
     useEffect(function () {
         document.querySelector(".searchCheck").checked = true;
