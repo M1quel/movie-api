@@ -11,9 +11,12 @@ import fetchMovies from './components/helpers/fetch';
 function App() {
   const isMounted = useRef(false)
   var [page, setPage] = useState(1);
+  console.log(page)
   var [searchValue, setSearchValue] = useState("")
   var [movies, setMovies] = useState(undefined);
   var [totalMovies, setTotalMovies] = useState(0)
+
+
   useEffect(function () {
     if(isMounted.current) {
       setMovies(undefined)
@@ -36,11 +39,6 @@ function App() {
       isMounted.current = true
     }
   }, [page]) //eslint-disable-line
-  // useEffect(function () {
-  //   Notification.requestPermission(function(status) {
-  //     console.log("Notification permission status: ", status)
-  //   })
-  // }, [])
 
   return (
     <>

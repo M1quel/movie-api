@@ -8,7 +8,7 @@ export default function Searchbar(props) {
         event.preventDefault()
         props.state([])
         navigate("/search")
-        var searchValue = document.querySelector(".search__input").value
+        var searchValue = event.target.searchInput.value
         props.searchState(searchValue)
         var options = {
             method: 'GET',
@@ -33,7 +33,7 @@ export default function Searchbar(props) {
         <section className="header">
             <input type="checkbox" name="searchCheck" id="searchCheck" className="searchCheck" />
             <form onSubmit={(event) => {submitHandler(event)}} className="search">
-                <input className="search__input" type="text" />
+                <input name="searchInput" id="searchInput" className="search__input" type="text" />
                 <button className="search__submit" type="submit">&#x1F50D;</button>
             </form>
             <label htmlFor="searchCheck" className="header__expandSearch"><i className="fas fa-chevron-down"></i></label>
